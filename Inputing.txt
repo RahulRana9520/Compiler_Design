@@ -1,0 +1,8 @@
+#include<stdio.h>
+
+int main(){
+    int a=10;   //first variable 
+    int b=21;   //second variable 
+    int c=a+b;
+    printf("%d",c)
+}
