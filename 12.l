@@ -8,7 +8,7 @@ int consonants = 0;
 %%
 [aAeEiIoOuU]      { vowels++; }
 [b-df-hj-np-tv-zB-DF-HJ-NP-TV-Z]   { consonants++; }
-\n                ;
+\n                ;                 //if we not write these rule the string with new line give warning or error 
 [ \t]             ;
 .                 ;
 %%

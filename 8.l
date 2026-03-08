@@ -17,17 +17,15 @@
 
 int main()
 {
-    FILE *fpin;
-    fpin = fopen("Inputing.txt", "r");
+    yyin = fopen("Inputing.txt", "r");      // Directly assign to yyin
     fpout = fopen("out.c", "w");
-    if(fpin == NULL){
-        printf("Cannot open Input.txt\n");
+    if(yyin == NULL){
+        printf("Cannot open Inputing.txt\n");
         exit(1);
     }
-    yyin = fpin;
     yylex();
 
-    fclose(fpin);
+    fclose(yyin);
     fclose(fpout);
     printf("Comments removed successfully. Check out.c\n");
     return 0;
@@ -37,4 +35,3 @@ int yywrap()
 {
     return 1;
 }
-

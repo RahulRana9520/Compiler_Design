@@ -7,27 +7,24 @@ FILE *fpout;
 
 %%
 [ \t]+      { fprintf(fpout, " "); }
-\n          { fprintf(fpout, "\n"); }
+\n          { fprintf(fpout, "\n"); }          // if we ignore \n the output become a single large line
 .           { fprintf(fpout, "%s", yytext); }
 %%
 
 int main()
 {
-    FILE *fpin;
-
-    fpin = fopen("Input.txt", "r");
+    yyin = fopen("Input.txt", "r");           // Directly assign to yyin
     fpout = fopen("Output.txt", "w");
 
-    if(fpin == NULL)
+    if(yyin == NULL)
     {
         printf("Cannot open Input.txt\n");
         exit(1);
     }
 
-    yyin = fpin;
     yylex();
 
-    fclose(fpin);
+    fclose(yyin);
     fclose(fpout);
 
     printf("Processing completed. Check Output.txt\n");
