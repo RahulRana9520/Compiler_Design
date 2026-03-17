@@ -1,1 +1,17 @@
-Hello and Welcome to the CD Lab
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+</title>
+</head>
+<body>
+<h1>
+</h1>
+<p>
+<b>
+</b>
+</p>
+<img src="image.jpg" alt="Sample Image">
+<br>
+</body>
+</html>

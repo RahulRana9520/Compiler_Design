@@ -360,10 +360,9 @@ struct yy_trans_info
 	flex_int32_t yy_verify;
 	flex_int32_t yy_nxt;
 	};
-static const flex_int16_t yy_accept[12] =
+static const flex_int16_t yy_accept[9] =
     {   0,
-        2,    2,    4,    2,    3,    2,    2,    2,    2,    1,
-        0
+        0,    0,    4,    2,    2,    0,    1,    0
     } ;
 
 static const YY_CHAR yy_ec[256] =
@@ -373,11 +372,11 @@ static const YY_CHAR yy_ec[256] =
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    1,    1,    1,    1,    1,    1,    1,    1,    3,
+        1,    4,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    1,    1,    1,    1,    1,    3,    4,    1,    1,
 
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
@@ -400,31 +399,29 @@ static const YY_CHAR yy_ec[256] =
 
 static const YY_CHAR yy_meta[5] =
     {   0,
-        1,    2,    1,    1
+        1,    1,    1,    2
     } ;
 
-static const flex_int16_t yy_base[14] =
+static const flex_int16_t yy_base[10] =
     {   0,
-        9,    0,   10,    0,   12,    3,    0,    0,    3,   12,
-       12,    7,    0
+        0,    0,    7,    8,    0,    2,    8,    8,    4
     } ;
 
-static const flex_int16_t yy_def[14] =
+static const flex_int16_t yy_def[10] =
     {   0,
-       12,   12,   11,   13,   11,   11,   13,    6,    6,   11,
-        0,   11,   11
+        8,    1,    8,    8,    9,    9,    8,    0,    8
     } ;
 
-static const flex_int16_t yy_nxt[17] =
+static const flex_int16_t yy_nxt[13] =
     {   0,
-        7,    5,    6,    7,   10,    8,    9,    4,    4,   11,
-        5,    3,   11,   11,   11,   11
+        4,    4,    5,    4,    6,    7,    8,    3,    8,    8,
+        8,    8
     } ;
 
-static const flex_int16_t yy_chk[17] =
+static const flex_int16_t yy_chk[13] =
     {   0,
-       13,    2,    2,    6,    9,    6,    6,   12,   12,    3,
-        1,   11,   11,   11,   11,   11
+        1,    1,    1,    1,    9,    6,    3,    8,    8,    8,
+        8,    8
     } ;
 
 static yy_state_type yy_last_accepting_state;
@@ -441,11 +438,12 @@ int yy_flex_debug = 0;
 #define YY_MORE_ADJ 0
 #define YY_RESTORE_YY_MORE_OFFSET
 char *yytext;
-#line 1 "16.l"
-#line 2 "16.l"
-    #include<stdio.h>
-#line 448 "lex.yy.c"
-#line 449 "lex.yy.c"
+#line 1 "9_1.l"
+#line 2 "9_1.l"
+#include<stdio.h>
+FILE *yyin, *yyout;
+#line 446 "lex.yy.c"
+#line 447 "lex.yy.c"
 
 #define INITIAL 0
 
@@ -625,9 +623,6 @@ extern int yylex (void);
 #endif
 
 #define YY_RULE_SETUP \
-	if ( yyleng > 0 ) \
-		YY_CURRENT_BUFFER_LVALUE->yy_at_bol = \
-				(yytext[yyleng - 1] == '\n'); \
 	YY_USER_ACTION
 
 /** The main scanner function which does all the work.
@@ -665,10 +660,10 @@ YY_DECL
 		}
 
 	{
-#line 5 "16.l"
+#line 6 "9_1.l"
 
 
-#line 672 "lex.yy.c"
+#line 667 "lex.yy.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -683,7 +678,6 @@ YY_DECL
 		yy_bp = yy_cp;
 
 		yy_current_state = (yy_start);
-		yy_current_state += YY_AT_BOL();
 yy_match:
 		do
 			{
@@ -696,13 +690,13 @@ yy_match:
 			while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 				{
 				yy_current_state = (int) yy_def[yy_current_state];
-				if ( yy_current_state >= 12 )
+				if ( yy_current_state >= 9 )
 					yy_c = yy_meta[yy_c];
 				}
 			yy_current_state = yy_nxt[yy_base[yy_current_state] + yy_c];
 			++yy_cp;
 			}
-		while ( yy_base[yy_current_state] != 12 );
+		while ( yy_base[yy_current_state] != 8 );
 
 yy_find_action:
 		yy_act = yy_accept[yy_current_state];
@@ -727,24 +721,23 @@ do_action:	/* This label is used only to access EOF actions. */
 			goto yy_find_action;
 
 case 1:
-*yy_cp = (yy_hold_char); /* undo effects of setting up yytext */
-(yy_c_buf_p) = yy_cp -= 1;
-YY_DO_BEFORE_ACTION; /* set up yytext again */
+/* rule 1 can match eol */
 YY_RULE_SETUP
-#line 7 "16.l"
-{printf("%s is a accepted string\n",yytext);}
+#line 8 "9_1.l"
+fprintf(yyout,"%s\n",yytext);
 	YY_BREAK
 case 2:
+/* rule 2 can match eol */
 YY_RULE_SETUP
-#line 8 "16.l"
-{printf("%s is not accepted\n",yytext);}
+#line 10 "9_1.l"
+;
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 10 "16.l"
+#line 12 "9_1.l"
 ECHO;
 	YY_BREAK
-#line 748 "lex.yy.c"
+#line 741 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1029,7 +1022,6 @@ static int yy_get_next_buffer (void)
 	char *yy_cp;
     
 	yy_current_state = (yy_start);
-	yy_current_state += YY_AT_BOL();
 
 	for ( yy_cp = (yytext_ptr) + YY_MORE_ADJ; yy_cp < (yy_c_buf_p); ++yy_cp )
 		{
@@ -1042,7 +1034,7 @@ static int yy_get_next_buffer (void)
 		while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 			{
 			yy_current_state = (int) yy_def[yy_current_state];
-			if ( yy_current_state >= 12 )
+			if ( yy_current_state >= 9 )
 				yy_c = yy_meta[yy_c];
 			}
 		yy_current_state = yy_nxt[yy_base[yy_current_state] + yy_c];
@@ -1070,11 +1062,11 @@ static int yy_get_next_buffer (void)
 	while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 		{
 		yy_current_state = (int) yy_def[yy_current_state];
-		if ( yy_current_state >= 12 )
+		if ( yy_current_state >= 9 )
 			yy_c = yy_meta[yy_c];
 		}
 	yy_current_state = yy_nxt[yy_base[yy_current_state] + yy_c];
-	yy_is_jam = (yy_current_state == 11);
+	yy_is_jam = (yy_current_state == 8);
 
 		return yy_is_jam ? 0 : yy_current_state;
 }
@@ -1189,8 +1181,6 @@ static int yy_get_next_buffer (void)
 	c = *(unsigned char *) (yy_c_buf_p);	/* cast for 8-bit char's */
 	*(yy_c_buf_p) = '\0';	/* preserve yytext */
 	(yy_hold_char) = *++(yy_c_buf_p);
-
-	YY_CURRENT_BUFFER_LVALUE->yy_at_bol = (c == '\n');
 
 	return c;
 }
@@ -1752,15 +1742,25 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 10 "16.l"
+#line 12 "9_1.l"
 
 
-int main(){
-    printf("enter the string (for output Ctrl+D):");
+int main()
+{
+    yyin = fopen("index.html","r");   // existing HTML file
+    yyout = fopen("output.txt","w");    // output file automatically created
+
     yylex();
+
+    fclose(yyin);
+    fclose(yyout);
+
+    printf("All HTML tags extracted into tags.txt\n");
+
     return 0;
 }
 
-int yywrap(){
+int yywrap()
+{
     return 1;
 }

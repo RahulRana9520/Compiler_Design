@@ -11,7 +11,7 @@
 "/*"([^*]|\*+[^*/])*\*+"/"  { }
 .                   { fprintf(fpout, "%s", yytext); }
 
-\n                  { fprintf(fpout, "\n"); }
+\n                   { fprintf(fpout, "\n"); }
 
 %%
 
