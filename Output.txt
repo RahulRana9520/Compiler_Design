@@ -1,17 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>
-</title>
-</head>
-<body>
-<h1>
-</h1>
-<p>
-<b>
-</b>
-</p>
-<img src="image.jpg" alt="Sample Image">
-<br>
-</body>
-</html>
+Lex is a program that generates lexical analyzer. 
+It is used with YACC parser generator. 
+The lexical analyzer is a program that 
+transforms an input stream into a 
+sequence of tokens.

@@ -5,7 +5,5 @@ int main(){
     int b=21;   
     int c=a+b;
     printf("%d",c);
-    /* 
-    this is add two no code 
-    */
+    
 }

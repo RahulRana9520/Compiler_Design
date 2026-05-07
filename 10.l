@@ -5,8 +5,8 @@
 keyword     int|float|char|double|if|else|while|return
 identifier  [a-zA-Z_][a-zA-Z0-9_]*
 number      [0-9]+
-string      \"[^\"]*\"
-literal     \'[^\']\'
+string      \"[^\"]*\"  
+literal     \'[^\']\'       
 
 %%
 

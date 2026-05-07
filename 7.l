@@ -1,20 +1,18 @@
 %{
 #include<stdio.h>
 #include<stdlib.h>
-
-FILE *fpout;
 %}
 
 %%
-[ \t]+      { fprintf(fpout, " "); }
-\n          { fprintf(fpout, "\n"); }          // if we ignore \n the output become a single large line
-.           { fprintf(fpout, "%s", yytext); }
+[ \t]+      { fprintf(yyout , " "); }
+\n          { fprintf(yyout, "\n"); }          // if we ignore \n the output become a single large line
+.           { fprintf(yyout, "%s", yytext); }
 %%
 
 int main()
 {
     yyin = fopen("Input.txt", "r");           // Directly assign to yyin
-    fpout = fopen("Output.txt", "w");
+    yyout = fopen("Output.txt", "w");
 
     if(yyin == NULL)
     {
@@ -25,7 +23,7 @@ int main()
     yylex();
 
     fclose(yyin);
-    fclose(fpout);
+    fclose(yyout);
 
     printf("Processing completed. Check Output.txt\n");
     return 0;

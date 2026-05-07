@@ -1,15 +1,13 @@
 %{
 #include<stdio.h>
+#include<string.h>
 %}
 %%
-^[a-z A-Z][a-z A-Z 0-9 _ ]*   {printf("this is a valid identifier\n");}
+^[a-z A-Z _][a-z A-Z 0-9 _ ]*   {printf("this is a valid identifier\n");}
 .*                            {printf("this is not a valid identifier\n");}
 %%
 int main(){
-char input[100];
     printf("Enter your variable string:");
-    scanf("%s",input);
-    yy_scan_string(input);
     yylex();      //yylex predifen functon call the  lex  ,it takes the input and it will pass the input to the rule section for pattern matching 
     return 0;
 }

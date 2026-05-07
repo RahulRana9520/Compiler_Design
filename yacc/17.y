@@ -9,7 +9,7 @@
 %token NUMBER                   // declares NULMBER as a token , this token received from lex
 
 %%
-STMT : EXPR '\n' {printf("valid expression");} //S->E
+STMT : EXPR '\n' {printf("valid expression\n");} //S->E
      ;
 EXPR : EXPR '+' TERM
      | EXPR '-' TERM
@@ -29,7 +29,7 @@ void yyerror(const char *s){
 }
 
 int main(){
-    printf("Enter your expression");
+    printf("Enter your expression:\n");
     yyparse();
     return 0;
 }

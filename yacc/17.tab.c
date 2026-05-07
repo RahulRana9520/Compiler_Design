@@ -1065,7 +1065,7 @@ yyreduce:
     {
   case 2: /* STMT: EXPR '\n'  */
 #line 12 "17.y"
-                 {printf("valid expression");}
+                 {printf("valid expression\n");}
 #line 1070 "17.tab.c"
     break;
 
@@ -1271,7 +1271,7 @@ void yyerror(const char *s){
 }
 
 int main(){
-    printf("Enter your expression");
+    printf("Enter your expression:\n");
     yyparse();
     return 0;
 }
